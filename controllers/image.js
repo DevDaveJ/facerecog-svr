@@ -14,7 +14,7 @@ const WORKFLOW_ID = "Face";
 const handleClarifaiCall = (req, res) => {
 	// This will be used by every Clarifai endpoint call
 	const metadata = new grpc.Metadata();
-	metadata.set("authorization", "Key " + PAT);
+	metadata.set("authorization", "Key " + process.env.PAT);
 
 	stub.PostWorkflowResults(
 		{
