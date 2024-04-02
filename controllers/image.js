@@ -65,12 +65,11 @@ const handleClarifaiCall = (req, res) => {
 					const value = concept.value.toFixed(4);
 
 					console.log(`${name}: ${value} BBox: ${topRow}, ${leftCol}, ${bottomRow}, ${rightCol}`);
-
 				});
 			});
-			console.log({ regions });
-			
-			return res.json(regions);
+			console.log("Regions object: ",{ regions });
+
+			return res.json(JSON.stringify(regions));
 		}
 	);
 }
