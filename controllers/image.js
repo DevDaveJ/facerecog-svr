@@ -41,12 +41,12 @@ const handleClarifaiCall = (req, res) => {
 			// We'll get one WorkflowResult for each input we used above. Because of one input, we have here
 			// one WorkflowResult.
 			const results = response.results[0];
-			console.log({ results });
-			res.json(results);
 			
 			// Each model we have in the workflow will produce one output.
 			for (const output of results.outputs) {
-				const model = output.model;
+				console.log("Output: ",{ output });
+
+					const model = output.model;
 
 				console.log("Predicted concepts for the model `" + model.id + "`:");
 				for (const concept of output.data.concepts) {
