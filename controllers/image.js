@@ -68,6 +68,8 @@ const handleClarifaiCall = (req, res) => {
 
 				});
 			});
+			console.log({ regions });
+			
 			return res.json(regions);
 		}
 	);
